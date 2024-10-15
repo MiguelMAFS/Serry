@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .register-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 300px;
+        }
+
+        .register-box h2 {
+            margin: 0 0 20px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            border: none;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-bottom: 2px solid #ff416c;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus + label,
+        .input-group input:valid + label {
+            top: -20px;
+            left: 0;
+            color: #ff416c;
+            font-size: 12px;
+        }
+
+        button {
+            background: #ff416c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ff4b2b;
+        }
+
+        .login-link {
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #ff416c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: #ff4b2b;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('registerForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var usuario = document.getElementById('usuario').value;
+                document.getElementById('userName').textContent = usuario;
+                document.getElementById('welcomeMessage').style.display = 'block';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Registro</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="usuario" required>
+                    <label>Usuario</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p id="welcomeMessage" style="display:none;">¡Bienvenido, <span id="userName"></span>!</p>
+            <div class="login-link">
+                <p>¿Ya tienes una cuenta? <a href="Iniciar.html">Iniciar sesión</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
